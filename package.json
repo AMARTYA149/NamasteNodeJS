@@ -1,0 +1,15 @@
+{
+  "name": "namaste-nodejs",
+  "version": "1.0.0",
+  "description": "NamasteNodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Amartya Aishwarya",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^6.16.0"
+  }
+}
