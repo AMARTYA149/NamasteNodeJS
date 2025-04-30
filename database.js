@@ -20,6 +20,34 @@ async function main(){
     const db = client.db(dbName);
     const collection = db.collection("User");
 
+    const data = {
+        firstName: "Swati",
+        lastName: "Rani",
+        city: "Bengaluru"
+    }
+
+    //WRITE
+    const insertResult = await collection.insertMany([data]);
+    console.log('Inserted documents =>', insertResult);
+  
+
+    // READ
+    const findResult = await collection.find({}).toArray();
+    console.log('Found documents =>', findResult);
+
+    //COUNT
+    const countResults = await collection.countDocuments({});
+    console.log("Count of documents in the User collection: ", countResults);
+
+    //Find all documents with filter of firstname a Swati
+    const filterResults = await collection.find({firstName : 'Swati'}).toArray();
+    console.log("Filter results with Firstname as Swati: ", filterResults);
+
+    //UPDATE
+    const updateResult = await collection.updateOne({ firstName : 'Swati' }, { $set: { homeTown: "Bokaro"} });
+    console.log('Updated documents =>', updateResult);
+
+
     return "done.";
 }
 
