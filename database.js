@@ -1,4 +1,3 @@
-
 // NOTES
 // Go to mongodb website
 // Create a free MO cluster
